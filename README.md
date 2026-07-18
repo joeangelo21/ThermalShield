@@ -1,38 +1,37 @@
-Escudo Térmico 🛡️
+ThermalShield 🛡️
 
-O Escudo Térmico é uma ferramenta de automação e segurança de baixo nível, projetada para gerenciar e proteger o hardware de estações de trabalho de alto desempenho. Desenvolvido para ambientes Linux que executam cargas intensivas (como modelos de linguagem local, compilação de código ou auditorias de segurança), este script garante que sua GPU operando sob estresse se mantenha dentro dos limites operacionais seguros.
-🚀 O que ele faz?
+ThermalShield is a low-level automation and security tool designed to manage and protect hardware in high-performance workstations. Developed for Linux environments running intensive workloads—such as local LLMs, code compilation, or security audits—this script ensures your GPU remains within safe operational limits under heavy stress.
+🚀 Key Features
 
-Este não é apenas um monitor; é um agente de fail-safe. Ele atua diretamente na camada de driver da NVIDIA para:
+This is not just a monitor; it is a fail-safe agent. It interfaces directly with NVIDIA drivers to:
 
-    Aplicar Políticas de Energia: Define limites rígidos de consumo (Power Limit) para evitar picos de temperatura desnecessários.
+    Enforce Power Policies: Sets rigid power consumption limits (Power Limit) to prevent unnecessary thermal spikes.
 
-    Controle Dinâmico de Ventilação: Gerencia a curva de ventilação do hardware para otimizar a dissipação de calor.
+    Dynamic Fan Control: Manages hardware fan curves to optimize heat dissipation.
 
-    Proteção Ativa (Fail-safe): Monitora a temperatura em tempo real. Caso o limite de segurança configurado seja atingido, ele encerra automaticamente processos críticos configurados, evitando danos permanentes ao hardware.
+    Active Protection (Fail-safe): Monitors GPU temperature in real-time. If the configured safety threshold is reached, it automatically terminates critical processes to prevent permanent hardware damage.
 
-🛠️ Tecnologias
+🛠️ Tech Stack
 
-    Linguagem: Python 3.
+    Language: Python 3.
 
-    Integração: nvidia-smi e nvidia-settings.
+    Integration: nvidia-smi and nvidia-settings.
 
-    Foco: Baixo consumo de recursos e alta confiabilidade em ambientes de produção.
+    Focus: Low resource footprint and high reliability for production-grade environments.
 
-⚙️ Instalação e Uso
+⚙️ Installation and Usage
+Requirements
 
-    Requisitos:
+    Linux OS (optimized for Debian-based systems).
 
-        Sistema Linux (testado e otimizado para MATE/Debian-based).
+    NVIDIA drivers properly installed and configured.
 
-        Drivers NVIDIA instalados e configurados.
+    Root privileges (sudo) to manage hardware settings.
 
-        Privilégios de superusuário (sudo).
+Configuration
 
-    Configuração:
-    Edite a seção de CONFIGURAÇÕES no início do script escudotermico.py para ajustar o TEMP_LIMIT, POWER_LIMIT e a lista de processos que deseja monitorar.
+Edit the CONFIGURATIONS section at the beginning of thermal_shield.py to adjust TEMP_LIMIT, POWER_LIMIT, and the PROCESSOS_PARA_MATAR (processes to kill) list according to your needs.
+Execution
+Bash
 
-    Execução:
-    Bash
-
-    sudo python3 escudotermico.py
+sudo python3 thermal_shield.py

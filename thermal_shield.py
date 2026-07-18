@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Escudo Térmico - Otimizado para Redes
+ThermalShield - Otimizado para Redes
 Um monitor de segurança para GPUs NVIDIA, focado em estabilidade e controle térmico.
 Desenvolvido para ambientes Linux onde a performance e a segurança de hardware são prioridade.
 """
